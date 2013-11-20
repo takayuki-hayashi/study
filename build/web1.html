@@ -1,0 +1,68 @@
+<!DOCTYPE html><html><head><script src="packages/shadow_dom/shadow_dom.debug.js"></script>
+<script src="packages/custom_element/custom-elements.debug.js"></script>
+<script src="packages/browser/interop.js"></script>
+
+    <meta charset="utf-8">
+    <title>Web Components Example</title>
+    <link rel="stylesheet" href="web1.css">
+    <link rel="stylesheet" href="base.css"> 
+    <link rel="stylesheet" href="layout.css"> 
+    <link rel="stylesheet" href="skeleton.css"> 
+    
+    <!-- import the click-counter -->
+    
+    <script src="web1.html_bootstrap.dart.js"></script>
+    
+        <style type="text/css">
+details[open] {
+    decorator: url(#details-open);
+}
+span {
+    decorator: url(#details-open);
+}
+    </style>
+  </head>
+  <body><polymer-element name="click-counter" attributes="count">
+  <template>
+    <style>
+    </style>
+    <div>
+      <button on-click="{{increment}}">Click me</button><br>
+      <span>(click count: {{count}})</span>
+    </div>
+  </template>
+  
+</polymer-element>
+    <h1>Web Componentsの世界</h1>
+    
+    <div id="template1">
+      <click-counter count="5"></click-counter>
+    </div>
+    <div id="template2">
+      <click-counter count="0"></click-counter>
+    </div>
+
+    <!-- デコレータの定義 -->
+<decorator id="details-open">
+    <template>
+        <a id="summary">
+          ▾
+          <content select="summary"></content>
+        </a>
+        <content></content>
+    </template>
+</decorator>
+
+<span>デコレーター</span>
+
+<details open="">
+    <summary>Timepieces</summary>
+    <ul>
+      <li>Sundial
+      </li><li>Cuckoo clock
+      </li><li>Wristwatch
+    </li></ul>
+</details>
+  
+
+</body></html>
